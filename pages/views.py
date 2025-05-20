@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 
 def index(requset):
-    return HttpResponse("Главная")
+    return render(requset,"index.html")
 
 def about(request):
     return HttpResponse('О нас')

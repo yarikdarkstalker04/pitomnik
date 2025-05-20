@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Card, Gallery
+class GalleryInline(admin.TabularInline):
+    fk_name='card'
+    model=Gallery
 
-# Register your models here.
+@admin.register(Card)
+class CardAdmin(admin.ModelAdmin):
+    inlines = [GalleryInline,]
